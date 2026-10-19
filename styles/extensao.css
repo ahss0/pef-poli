@@ -1,0 +1,21 @@
+.extensao {
+  max-width: 2000px;
+  margin: 40px 40px 40px 40px;
+  padding: 20px 20px;
+}
+
+.extensao h1 {
+  font-size: 2.5rem;
+  color: #2c3e50;
+  margin-bottom: 24px;
+  line-height: 1.2;
+}
+
+.extensao p {
+  font-size: 1.4rem;
+  line-height: 1.8;
+  color: #555;
+  margin-bottom: 16px;
+  text-align: justify;
+}
+

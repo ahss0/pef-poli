@@ -1,0 +1,79 @@
+.grad-intro {
+  margin-bottom: 1.5rem;
+}
+.grad-count {
+  font-size: 0.9rem;
+  opacity: 0.7;
+}
+
+.grad-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.6rem;
+}
+
+.grad-item {
+  display: grid;
+  grid-template-columns: 6.5rem 1fr auto;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.8rem 1.1rem;
+  background: #fff;
+  border: 2px solid #e2e6ea;
+  border-radius: 14px;
+  transition: box-shadow 0.25s, transform 0.2s;
+}
+.grad-item:hover,
+.grad-item:focus-within {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  transform: translateY(-1px);
+}
+
+.grad-codigo {
+  padding: 0.25rem 0.6rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-align: center;
+  border-radius: 8px;
+  /* troque pelas variáveis de cor do seu tema */
+  background: var(--azul-principal, #1a3a5c);
+  color: var(--branco, #fff);
+}
+
+.grad-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+.grad-nome {
+  line-height: 1.35;
+}
+.grad-ativacao {
+  font-size: 0.78rem;
+  opacity: 0.6;
+}
+
+.grad-janus {
+  font-size: 0.85rem;
+  font-weight: 600;
+  white-space: nowrap;
+  text-decoration: none;
+}
+.grad-janus:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 640px) {
+  .grad-item {
+    grid-template-columns: 1fr auto;
+    gap: 0.5rem 1rem;
+  }
+  /* código em cima; nome e link Janus na linha de baixo */
+  .grad-codigo {
+    grid-column: 1 / -1;
+    justify-self: start;
+  }
+}

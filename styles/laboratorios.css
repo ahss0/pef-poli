@@ -1,0 +1,201 @@
+/* ===== Card do laboratório (substitui os estilos antigos de .lab-card*) ===== */
+
+.labs-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: stretch;
+}
+
+@media (max-width: 800px) {
+  .labs-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.lab-card {
+  position: relative; /* referência para o ::after do botão */
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1.4rem;
+  background: #fff;
+  border: 2px solid #e2e6ea;
+  border-radius: 20px;
+  transition: box-shadow 0.3s, transform 0.2s;
+  margin: 10px 10px;
+}
+.lab-card:hover,
+.lab-card:focus-within {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+.lab-card-header {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  border-radius: 10px;
+}
+.lab-card-sigla {
+
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin: 8px 8px;
+  letter-spacing: 0.04em;
+  color: var(--branco); 
+}
+.lab-card-dept {
+  font-size: 0.8rem;
+  color: var(--branco);
+  opacity: 0.7;
+}
+.lab-card-nome {
+  margin: 0;
+  font-size: 1.05rem;
+  line-height: 1.3;
+}
+.lab-card-info {
+  margin: 0;
+  display: grid;
+  gap: 0.4rem;
+  font-size: 0.9rem;
+}
+.lab-card-info dt {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  opacity: 0.6;
+}
+.lab-card-info dd {
+  margin: 2px;
+}
+/* links ficam acima do botão esticado para continuarem clicáveis */
+.lab-card-link {
+  position: relative;
+  z-index: 1;
+}
+.lab-card-open {
+  margin-top: auto;
+  align-self: flex-start;
+  padding: 0;
+  background: none;
+  border: 0;
+  font: inherit;
+  font-weight: 600;
+  color: inherit;
+  cursor: pointer;
+}
+.lab-card-open::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+}
+.lab-card-open:focus-visible::after {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+
+/* ===== Modal ===== */
+.lab-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.55);
+  animation: lab-fade 0.15s ease-out;
+}
+
+.lab-modal {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: min(900px, 100%);
+  max-height: 90vh;
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+  animation: lab-pop 0.18s ease-out;
+}
+
+.lab-modal-close {
+  position: absolute;
+  top: 0.6rem;
+  right: 0.8rem;
+  width: 2.2rem;
+  height: 2.2rem;
+  font-size: 1.8rem;
+  line-height: 1;
+  background: none;
+  border: 0;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.lab-modal-close:hover {
+  background: rgba(0, 0, 0, 0.08);
+}
+.lab-modal-header {
+  padding: 1.5rem 3.2rem 1rem 1.5rem;
+  border-bottom: 1px solid #e2e6ea;
+  color: var(--branco);
+}
+.lab-modal-sigla {
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  opacity: 0.7;
+}
+.lab-modal-header h2 {
+  margin: 0.2rem 0 0.4rem;
+  font-size: 1.35rem;
+  line-height: 1.25;
+}
+.lab-modal-meta{
+  margin: 0;
+  font-size: 0.9rem;
+  opacity: 0.75;
+}
+.lab-modal-body {
+  padding: 1.25rem 1.5rem;
+  overflow-y: auto; /* só o corpo rola; cabeçalho e rodapé ficam fixos */
+  line-height: 1.65;
+  font-size: 1.2rem;
+}
+.lab-modal-body p {
+  margin: 0;
+}
+.lab-modal-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin: 1rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+.lab-modal-tags li {
+  padding: 0.2rem 0.6rem;
+  font-size: 1rem;
+  background: #eef1f4;
+  border-radius: 999px;
+}
+.lab-modal-footer {
+  padding: 0.9rem 1.5rem;
+  border-top: 1px solid #e2e6ea;
+  text-align: right;
+}
+
+@keyframes lab-fade {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes lab-pop {
+  from { opacity: 0; transform: translateY(8px) scale(0.98); }
+  to   { opacity: 1; transform: none; }
+}
+
+@media (max-width: 600px) {
+  .lab-modal { max-height: 92vh; }
+  .lab-modal-header { padding: 1.2rem 3rem 0.9rem 1.1rem; }
+  .lab-modal-body { padding: 1rem 1.1rem; }
+}
