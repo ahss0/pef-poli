@@ -10,6 +10,7 @@ const NAV_ITEMS = [
     label: "Quem somos",
     dropdown: [
       { label: "Organização administrativa", href: "#" },
+      { label: "Funcionários", href: "/funcionarios" },
       { label: "Professores", href: "/professores" },
     ],
   },
