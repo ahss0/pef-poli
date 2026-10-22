@@ -1,13 +1,14 @@
 /** @type {import('next').NextConfig} */
+
 const nextConfig = {
   images: {
     remotePatterns: [
       {
         protocol: 'https',
         hostname: '://cloudinary.com',
-        pathname: '/**', // Permite qualquer caminho dentro do Cloudinary
+        pathname: '/**',
       },
-      // Se você ainda quiser testar o Strapi localmente em paralelo:
+
       {
         protocol: 'http',
         hostname: 'localhost',

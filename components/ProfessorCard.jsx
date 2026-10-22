@@ -4,6 +4,7 @@
 // Ao clicar no card (fora dos links), abre o modal com o Lattes do professor.
 // A abertura do modal é controlada pelo componente pai via `onOpenLattes`.
 export default function ProfessorCard({ professor, onOpenLattes }) {
+
   const { nome, telefone, lattes, site, email, linkedin, foto } = professor;
 
   function handleCardClick() {
