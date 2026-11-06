@@ -3,9 +3,11 @@ import "../styles/professores.css";
 import "../styles/extensao.css";
 import "../styles/noticias.css";
 import "../styles/laboratorios.css";
-import "../styles/pos-graduacao.css"
-import "../styles/graduacao.css"
-import "../styles/teses.css"
+import "../styles/pos-graduacao.css";
+import "../styles/graduacao.css";
+import "../styles/teses.css";
+import "../styles/lattes-model.css";
+
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
